@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(Router);
 
@@ -9,36 +8,31 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
-    },
-    {
       path: "/dynamic",
       name: "dynamic",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "dynamic" */ "../views/dynamic.vue")
+        import(/* webpackChunkName: "DynamicMonitor" */ "../views/DynamicMonitor.vue")
     },
     {
       path: "/unit",
       name: "unit",
       component: () =>
-        import(/* webpackChunkName: "unit" */ "../views/unit.vue")
+        import(/* webpackChunkName: "UnitManage" */ "../views/UnitManage.vue")
     },
     {
       path: "/person",
       name: "person",
-      component: () => 
-        import(/* webpackChunkName: "person" */ "../views/person.vue")
+      component: () =>
+        import(/* webpackChunkName: "PersonManage" */ "../views/PersonManage.vue")
     },
     {
       path: "/user",
       name: "user",
-      component: () => 
-        import(/* webpackChunkName: "user" */ "../views/user.vue")
+      component: () =>
+        import(/* webpackChunkName: "UserManage" */ "../views/UserManage.vue")
     }
   ]
 });

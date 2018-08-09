@@ -7,11 +7,11 @@ class httpRequest {
       url: ""
     };
     // 存储请求队列
-    this.queue = {}
+    this.queue = {};
   }
   // 销毁请求实例
   destroy(url) {
-    delete this.queue[url]
+    delete this.queue[url];
     const queue = Object.keys(this.queue);
     return queue.length;
   }
@@ -25,7 +25,7 @@ class httpRequest {
       },
       error => {
         // 对请求错误做些什么
-        return Promise.reject(error)
+        return Promise.reject(error);
       }
     );
 
@@ -38,7 +38,7 @@ class httpRequest {
           if (data.code === 401) {
             alert("未登录，或登录失效，请登录");
           } else {
-            if (data.msg) alert(data.msg)
+            if (data.msg) alert(data.msg);
           }
           return false;
         }
@@ -58,7 +58,7 @@ class httpRequest {
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       }
-    }
+    };
     return Axios.create(conf);
   }
   // 合并请求实例
